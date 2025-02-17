@@ -4,12 +4,17 @@
 [ext_resource type="Script" path="res://scripts/player_ship.gd" id="1_mvy4v"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iyb5s"]
+radius = 51.0098
 
-[node name="PlayerShip" type="CharacterBody2D"]
+[node name="PlayerShip" type="CharacterBody2D" node_paths=PackedStringArray("laser_origin_marker")]
 script = ExtResource("1_mvy4v")
+laser_origin_marker = NodePath("LaserOriginMarker")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_307pd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_iyb5s")
+
+[node name="LaserOriginMarker" type="Marker2D" parent="."]
+position = Vector2(0, -46)

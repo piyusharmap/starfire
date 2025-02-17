@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://colq4al2i4475"]
+[gd_scene load_steps=5 format=3 uid="uid://colq4al2i4475"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_40tvu"]
 [ext_resource type="Texture2D" uid="uid://cgrxtj0j8l3k3" path="res://assets/textures/backgrounds/bg_purple.png" id="2_1e6vs"]
+[ext_resource type="PackedScene" uid="uid://dbocyo1h040nc" path="res://scenes/boundaries.tscn" id="3_4oslh"]
 [ext_resource type="PackedScene" uid="uid://bc1wkvgp6llvy" path="res://scenes/player_ship.tscn" id="3_fa62x"]
 
 [node name="World" type="Node2D"]
@@ -20,5 +21,11 @@ centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 1280, 720)
 
+[node name="Boundaries" parent="." instance=ExtResource("3_4oslh")]
+
 [node name="PlayerShip" parent="." instance=ExtResource("3_fa62x")]
 position = Vector2(568, 461)
+
+[node name="Lasers" type="Node2D" parent="."]
+
+[connection signal="shoot" from="PlayerShip" to="." method="_on_player_ship_shoot"]
