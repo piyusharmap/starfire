@@ -1,20 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://bc1wkvgp6llvy"]
+[gd_scene load_steps=3 format=3 uid="uid://bc1wkvgp6llvy"]
 
 [ext_resource type="Texture2D" uid="uid://d12rae84lsd1" path="res://assets/textures/playerShip/player_ship1.png" id="1_307pd"]
 [ext_resource type="Script" path="res://scripts/player_ship.gd" id="1_mvy4v"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_iyb5s"]
-radius = 51.0098
-
 [node name="PlayerShip" type="CharacterBody2D" node_paths=PackedStringArray("laser_origin_marker")]
+collision_mask = 10
 script = ExtResource("1_mvy4v")
 laser_origin_marker = NodePath("LaserOriginMarker")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_307pd")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_iyb5s")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-7, -36, 6, -36, 10, -11, 36, 4, 48, -6, 45, 25, 13, 27, 7, 38, -7, 38, -13, 27, -45, 25, -47, -6, -36, 3, -10, -11)
 
 [node name="LaserOriginMarker" type="Marker2D" parent="."]
 position = Vector2(0, -46)

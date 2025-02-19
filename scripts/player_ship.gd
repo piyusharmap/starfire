@@ -13,3 +13,4 @@ func _physics_process(_delta: float) -> void:
 	
 	if Input.is_action_just_pressed("player_shoot"):
 		shoot.emit(laser_origin_marker.global_position)
+	

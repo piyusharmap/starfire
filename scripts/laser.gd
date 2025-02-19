@@ -4,3 +4,7 @@ extends Area2D
 
 func _process(delta: float) -> void:
 	position += Vector2(0, -laser_speed) * delta
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	queue_free()

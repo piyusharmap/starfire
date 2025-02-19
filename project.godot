@@ -49,6 +49,13 @@ player_shoot={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="player_ship"
+2d_physics/layer_2="meteor"
+2d_physics/layer_3="laser"
+2d_physics/layer_4="boundary"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

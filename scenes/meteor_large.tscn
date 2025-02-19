@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://djkbakej40kq3"]
+
+[ext_resource type="Script" path="res://scripts/meteor_large.gd" id="1_pyxfu"]
+
+[node name="MeteorLarge" type="Area2D"]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_pyxfu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape1" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(-33, -41, 23, -41, 50, -1, 35, 32, 10, 30, -22, 41, -50, 9)
+
+[node name="CollisionShape2" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(-11, -40, 28, -29, 44, 1, 21, 40, -27, 33, -42, 15, -44, -20)
+
+[node name="CollisionShape3" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(-35, -33, 17, -48, 48, -13, 30, 42, -19, 46, -48, 10)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
